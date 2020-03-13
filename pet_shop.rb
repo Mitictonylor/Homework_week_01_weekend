@@ -32,5 +32,5 @@ def pets_by_breed(shops,race)
       same_breed_list.push(pet)
       end
   end
-  same_breed_list.length
+return same_breed_list
 end
