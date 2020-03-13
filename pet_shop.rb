@@ -39,8 +39,18 @@ def find_pet_by_name(shop, name)
   for pet in shop[:pets]
       if pet[:name] == name
       return pet
-    else
-      return nil 
+      else
+      end
+  end
+  return nil
+end
+
+
+def remove_pet_by_name(shop,name)
+
+  for pet in shop[:pets]
+      if pet[:name] == name
+      pet.delete(:name)
       end
   end
 end
