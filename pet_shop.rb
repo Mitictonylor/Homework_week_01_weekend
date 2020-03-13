@@ -20,9 +20,9 @@ def pets_sold(shop)
   return shop[:admin][:pets_sold]
   end
 
-def stock_count(shop)
-  return shop[:pets].length
-end
+  def stock_count(count)
+    return count[:pets].count
+  end
 
 def pets_by_breed(shop,race)
   same_breed_list=[]
@@ -53,4 +53,9 @@ def remove_pet_by_name(shop,name)
       pet.delete(:name)
       end
   end
+end
+
+def add_pet_to_stock(pet, name)
+  pet[:pets].push(name)
+  return pet[:pets].length
 end
