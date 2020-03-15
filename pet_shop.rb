@@ -86,16 +86,25 @@ def customer_can_afford_pet(customer, new_pet)
     false
   end
 end
+ 
+ def sell_pet_to_customer(pet_shop,pet,customer)
+  if pet != nil && customer_can_afford_pet(customer, pet)
+      add_pet_to_customer(customer, pet)
 
-# def sell_pet_to_customer(pet_shop,pet,customer)
-#   if pet != nil && customer_can_afford_pet(customer, pet)
-#       add_pet_to_customer(customer, pet)
-#
-#       # the number of pets sold by the shop increases by 1
-#       add_pet_to_stock(pet_shop, pet)
-#       increase_pets_sold(pet_shop, 1)
-#
-#       # the amount of cash in the shop goes up by the price of the pet
-#       add_or_remove_cash(pet_shop, pet[:price])
-#   end
+       # the number of pets sold by the shop increases by 1
+       remove_pet_to_stock(pet_shop, pet)
+       increase_pets_sold(pet_shop, 1)
+
+       # the amount of cash in the shop goes up by the price of the pet
+       add_or_remove_cash(pet_shop, pet[:price])
+   end
+ end
+
+# def sell_pet_to_customer(@pet_shop,"Sir Percy", "Alice" )
+# if "Sir Percy" != nil && customer_can_afford_pet("Alice", "Sir Percy")
+#   add_pet_to_customer("Alice","Sir Percy")
+#   remove_pet_to_stock("Alice","Sir Percy")
+#   increase_pets_sold(@pet_shop,1)
+#   add_or_remove_cash(@pet_shop, "Sir Percy"[:price])
+# end
 # end
