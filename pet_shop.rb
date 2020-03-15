@@ -92,7 +92,7 @@ end
       add_pet_to_customer(customer, pet)
 
        # the number of pets sold by the shop increases by 1
-       remove_pet_to_stock(pet_shop, pet)
+       remove_pet_by_name(pet_shop, pet)
        increase_pets_sold(pet_shop, 1)
 
        # the amount of cash in the shop goes up by the price of the pet
