@@ -92,6 +92,7 @@ end
       add_pet_to_customer(customer, pet)
 
        # the number of pets sold by the shop increases by 1
+      remove_customer_cash(customer, pet[:price])
        remove_pet_by_name(pet_shop, pet)
        increase_pets_sold(pet_shop, 1)
 
